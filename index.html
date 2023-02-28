@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS Layout</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <ul class="menu">
+          <li class="menu__item dropdown">
+            <button class="menu__button" data-expanded="false">
+              Products
+              <i class="fa-solid fa-chevron-down fa-2xs"></i>
+            </button>
+            <ul class="menu__itemDropdown" data-expanded="false">
+              <li><a href="#">Living</a></li>
+              <li><a href="#">Garden</a></li>
+              <li><a href="#">Indoor Paint</a></li>
+              <li><a href="#">Outdoor Paint</a></li>
+              <li><a href="#">Gifts Paint</a></li>
+              <li><a href="#">All Products</a></li>
+            </ul>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Get Inspired</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Find a store</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">About us</a>
+          </li>
+          <li class="menu__item dropdown">
+            <a href="#" class="menu__link">Contact</a>
+          </li>
+        </ul>
+        <img
+          class="logo"
+          src="./public/img/header-logo1x.png "
+          alt="cloudsuite logo"
+        />
+        <ul class="user">
+          <li class="user__item">
+            <form class="search">
+              <i class="search__icon fa-solid fa-magnifying-glass"></i>
+              <input
+                class="search__input"
+                placeholder="What are you looking for?"
+              />
+            </form>
+          </li>
+          <li class="user__item">
+            <a href="#" class="login">
+              <span><i class="fa-solid fa-user"></i></span> My account
+            </a>
+          </li>
+          <li class="user__item">
+            <a href="#" class="basket">
+              <i class="fa-solid fa-basket-shopping fa-lg"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="highlight">
+          <p class="highlight__text" data-rate="-2">Bring the most</p>
+          <p class="highlight__text" data-rate="-2">beautiful colors into</p>
+          <p class="highlight__text" data-rate="-2">your home</p>
+          <button class="highlight__button" data-rate="-2">
+            Discover our indoor paint
+          </button>
+        </div>
+      </section>
+      <section class="content"></section>
+    </main>
+    <script src="./src/app.js"></script>
+  </body>
+</html>

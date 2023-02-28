@@ -1,0 +1,22 @@
+@mixin font($font-size, $font-weight, $line-height, $color) {
+  font-family: 'Roboto', sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin box($bgcolor, $padding) {
+  border: none;
+  cursor: pointer;
+  background-color: $bgcolor;
+  padding: $padding;
+  border-radius: 6.2rem;
+}

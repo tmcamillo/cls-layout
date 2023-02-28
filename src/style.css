@@ -1,0 +1,239 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video, form, input, a, button):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+a,
+button {
+  text-decoration: none;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    Remove list styles (bullets/numbers)
+    in case you use it with normalize.css
+  */
+ol,
+ul {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: transparent;
+  position: fixed;
+  height: 6.2rem;
+  width: 100%;
+  z-index: 10;
+}
+.header.bg-painted {
+  background-color: #ffffff;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 95%;
+}
+.navigation .menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 1.8rem;
+  flex-grow: 2;
+}
+.navigation .menu__button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  color: #4b4b4b;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0.3rem 0.9rem;
+  border-radius: 6.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.3rem;
+}
+.navigation .menu__button.bg-painted {
+  color: #ffffff;
+  background-color: #f6d524;
+}
+.navigation .menu__button:hover, .navigation .menu__button:focus {
+  background-color: #e1c323;
+}
+.navigation .menu__link {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  color: #4b4b4b;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 6.2rem;
+}
+.navigation .menu__link:hover, .navigation .menu__link:focus {
+  text-decoration: underline;
+}
+.navigation .menu__item {
+  position: relative;
+}
+.navigation .menu__itemDropdown {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 2rem;
+  color: #4b4b4b;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: white;
+  border-radius: 0.1rem;
+  left: 0rem;
+  width: 24rem;
+  padding: 1.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out;
+  box-shadow: 0rem 0.6rem 0.3rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.navigation .menu__itemDropdown li {
+  transition: background-color 200ms ease-in-out;
+}
+.navigation .menu__itemDropdown li > a {
+  color: #4b4b4b;
+}
+.navigation .menu__itemDropdown li:hover, .navigation .menu__itemDropdown li:focus {
+  filter: brightness(50%);
+  text-decoration: underline;
+}
+.navigation .logo {
+  flex-grow: 1;
+}
+.navigation .user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 2rem;
+  color: #4b4b4b;
+  flex-grow: 2;
+}
+.navigation .user .search__icon {
+  position: relative;
+  z-index: 2;
+  left: 2rem;
+}
+.navigation .user .search__input {
+  width: 16rem;
+  border-radius: 1.8rem;
+  border: 0.06rem solid #4b4b4b;
+  padding: 0.6rem 0.6rem 0.6rem 2rem;
+  background-color: transparent;
+  color: #4b4b4b;
+}
+.navigation .user .search__input::placeholder {
+  color: #4b4b4b;
+}
+.navigation .user .login,
+.navigation .user .basket {
+  color: #4b4b4b;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-startr;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(0deg, rgba(131, 182, 210, 0.9), rgba(131, 182, 210, 0.9)), url("/public/img/painting.png");
+  height: 100vh;
+  padding: 6.2rem 0rem 0rem 6.2rem;
+  gap: 1rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.highlight {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.highlight__text {
+  font-family: "Roboto", sans-serif;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 5.6rem;
+  color: #ffffff;
+  font-family: "Gochi Hand", cursive;
+}
+.highlight__button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  background-color: #f6d524;
+  padding: 1.1rem 2.5rem;
+  border-radius: 6.2rem;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
+  margin-top: 3rem;
+}
+.highlight__button:hover, .highlight__button:focus {
+  background-color: #e1c323;
+}
+
+.content {
+  height: 30vh;
+}
+
+/*# sourceMappingURL=style.css.map */

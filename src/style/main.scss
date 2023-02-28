@@ -1,0 +1,174 @@
+@import './mixins';
+@import './reset';
+@import './variables';
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  @include flex(row, space-between, center);
+  background-color: transparent;
+  position: fixed;
+  height: 6.2rem;
+  width: 100%;
+  z-index: 10;
+
+  &.bg-painted {
+    background-color: $white;
+  }
+}
+
+.navigation {
+  @include flex(row, space-between, center);
+  margin: 0 auto;
+  width: 95%;
+
+  .menu {
+    @include flex(row, flex-start, center);
+    gap: 1.8rem;
+    flex-grow: 2;
+
+    &__button {
+      @include font($default, 700, 1.2rem, $graffiti);
+      @include box(transparent, 0.3rem 0.9rem);
+      @include flex(row, center, center);
+      gap: 0.3rem;
+
+      &.bg-painted {
+        color: $white;
+        background-color: $yellow;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $hover-yellow;
+      }
+    }
+
+    &__link {
+      @include font($default, 700, 1.2rem, $graffiti);
+      @include box(transparent, 0);
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    &__item {
+      position: relative;
+
+      &Dropdown {
+        @include font($default, 200, 2rem, $graffiti);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        background-color: white;
+        border-radius: 0.1rem;
+        left: 0rem;
+        width: 24rem;
+        padding: 1.8rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 200ms ease-in-out;
+        box-shadow: 0rem 0.6rem 0.3rem rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+
+        li {
+          transition: background-color 200ms ease-in-out;
+          > a {
+            color: $graffiti;
+          }
+          &:hover,
+          &:focus {
+            filter: brightness(50%);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .logo {
+    flex-grow: 1;
+  }
+
+  .user {
+    @include flex(row, flex-end, center);
+    gap: 2rem;
+    color: $graffiti;
+    flex-grow: 2;
+
+    .search {
+      &__icon {
+        position: relative;
+        z-index: 2;
+        left: 2rem;
+      }
+
+      &__input {
+        width: 16rem;
+        border-radius: 1.8rem;
+        border: 0.06rem solid $graffiti;
+        padding: 0.6rem 0.6rem 0.6rem 2rem;
+        background-color: transparent;
+        color: $graffiti;
+
+        &::placeholder {
+          color: $graffiti;
+        }
+      }
+    }
+
+    .login,
+    .basket {
+      color: $graffiti;
+    }
+  }
+}
+
+.hero {
+  @include flex(column, center, flex-startr);
+  background: linear-gradient(
+      0deg,
+      rgba(131, 182, 210, 0.9),
+      rgba(131, 182, 210, 0.9)
+    ),
+    url('/public/img/painting.png');
+  height: 100vh;
+  padding: 6.2rem 0rem 0rem 6.2rem;
+  gap: 1rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.highlight {
+  @include flex(column, flex-start, flex-start);
+
+  &__text {
+    @include font(4.8rem, 700, 5.6rem, $white);
+    font-family: 'Gochi Hand', cursive;
+  }
+
+  &__button {
+    @include font($default, 700, 1.2rem, $white);
+    @include box($yellow, 1.1rem 2.5rem);
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
+    margin-top: 3rem;
+
+    &:hover,
+    &:focus {
+      background-color: $hover-yellow;
+    }
+  }
+}
+
+.content {
+  height: 30vh;
+}
