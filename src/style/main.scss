@@ -41,11 +41,15 @@ body {
       &.bg-painted {
         color: $white;
         background-color: $yellow;
+          &:hover,
+          &:focus {
+          color: white;
+        }
       }
 
       &:hover,
       &:focus {
-        background-color: $hover-yellow;
+        color: $hover-yellow;
       }
     }
 

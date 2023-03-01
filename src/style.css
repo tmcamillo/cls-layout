@@ -100,8 +100,11 @@ body {
   color: #ffffff;
   background-color: #f6d524;
 }
+.navigation .menu__button.bg-painted:hover, .navigation .menu__button.bg-painted:focus {
+  color: white;
+}
 .navigation .menu__button:hover, .navigation .menu__button:focus {
-  background-color: #e1c323;
+  color: #e1c323;
 }
 .navigation .menu__link {
   font-family: "Roboto", sans-serif;
