@@ -1,6 +1,7 @@
 const header = document.querySelector('header');
 const dropdownsTriggers = document.querySelectorAll('.dropdown > button');
 const dropdownsList = document.querySelectorAll('.dropdown');
+const highlightsElements = document.querySelectorAll('.highlight__text, .highlight__button');
 
 window.addEventListener('scroll', function () {
   paintedHeader();
@@ -52,8 +53,7 @@ function toggleDropdownState(element) {
 }
 
 function createParallax() {
-  const target = document.querySelectorAll('.highlight__text, .highlight__button');
-  target.forEach((item) => {
+  highlightsElements.forEach((item) => {
     const position = window.pageYOffset * item.dataset.rate;
     item.style.transform = `translate3d(0px, ${position}px, 0px)`;
   });
