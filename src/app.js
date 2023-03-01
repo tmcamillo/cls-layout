@@ -35,19 +35,19 @@ function toggleDropdownState(element) {
   const trigger = element.target;
   const menu = trigger.parentNode.querySelector('.menu__itemDropdown');
 
-  let isOpen = trigger.dataset.expanded;
+  let isOpen = trigger.getAttribute("aria-expanded");
   let iconDropDown = trigger.querySelector('.fa-solid');
 
   if (isOpen === 'true') {
     iconDropDown.classList.remove('fa-chevron-up');
     iconDropDown.classList.add('fa-chevron-down');
-    trigger.setAttribute('data-expanded', 'false');
+    trigger.setAttribute('aria-expanded', 'false');
     menu.style.visibility = 'hidden';
     menu.style.opacity = '0';
   } else {
     iconDropDown.classList.remove('fa-chevron-down');
     iconDropDown.classList.add('fa-chevron-up');
-    trigger.setAttribute('data-expanded', 'true');
+    trigger.setAttribute('aria-expanded', 'true');
     menu.style.visibility = 'visible';
     menu.style.opacity = '1';
   }

@@ -24,11 +24,11 @@
       <nav class="navigation">
         <ul class="menu">
           <li class="menu__item dropdown">
-            <button class="menu__button" data-expanded="false">
+            <button class="menu__button" aria-haspopup="true" aria-expanded="false">
               Products
               <i class="fa-solid fa-chevron-down fa-2xs"></i>
             </button>
-            <ul class="menu__itemDropdown" data-expanded="false">
+            <ul class="menu__itemDropdown" aria-label="submenu">
               <li><a href="#">Living</a></li>
               <li><a href="#">Garden</a></li>
               <li><a href="#">Indoor Paint</a></li>
@@ -61,17 +61,19 @@
               <i class="search__icon fa-solid fa-magnifying-glass"></i>
               <input
                 class="search__input"
+                id="search-input"
+                type="text"
                 placeholder="What are you looking for?"
               />
             </form>
           </li>
           <li class="user__item">
-            <a href="#" class="login">
-              <span><i class="fa-solid fa-user"></i></span> My account
+            <a href="#" class="login" aria-label="Login to your account">
+              <i class="fa-solid fa-user"></i> My account
             </a>
           </li>
           <li class="user__item">
-            <a href="#" class="basket">
+            <a href="#" class="basket" aria-label="Your shopping basket">
               <i class="fa-solid fa-basket-shopping fa-lg"></i>
             </a>
           </li>
