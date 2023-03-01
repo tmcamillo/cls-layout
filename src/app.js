@@ -54,7 +54,6 @@ function toggleDropdownState(element) {
 function createParallax() {
   const target = document.querySelectorAll('.highlight__text, .highlight__button');
   target.forEach((item) => {
-    //mathematic formula to determine the rate at which will scroll
     const position = window.pageYOffset * item.dataset.rate;
     item.style.transform = `translate3d(0px, ${position}px, 0px)`;
   });
