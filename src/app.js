@@ -25,9 +25,7 @@ function paintedHeader() {
 
 function toggleTriggersClass(action) {
   dropdownsTriggers.forEach((trigger) => {
-    action === 'remove'
-      ? trigger.classList.remove('bg-painted')
-      : trigger.classList.add('bg-painted');
+    action === 'remove' ? trigger.classList.remove('bg-painted') : trigger.classList.add('bg-painted');
   });
 }
 
@@ -54,11 +52,10 @@ function toggleDropdownState(element) {
 }
 
 function createParallax() {
-  const target = document.querySelectorAll(
-    '.highlight__text, .highlight__button'
-  );
-  target.forEach((_item, index) => {
-    const pos = window.pageYOffset * target[index].dataset.rate;
-    target[index].style.transform = `translate3d(0px, ${pos}px, 0px)`;
+  const target = document.querySelectorAll('.highlight__text, .highlight__button');
+  target.forEach((item) => {
+    //mathematic formula to determine the rate at which will scroll
+    const position = window.pageYOffset * item.dataset.rate;
+    item.style.transform = `translate3d(0px, ${position}px, 0px)`;
   });
 }

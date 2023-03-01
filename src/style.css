@@ -212,13 +212,13 @@ body {
   justify-content: center;
   flex-direction: column;
   background: linear-gradient(0deg, rgba(131, 182, 210, 0.9), rgba(131, 182, 210, 0.9)), url("/public/img/painting.png");
-  height: 100vh;
-  padding: 6.2rem 0rem 0rem 6.2rem;
-  gap: 1rem;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
+  padding: 6.2rem 0rem 0rem 6.2rem;
+  gap: 1rem;
 }
 
 .highlight {

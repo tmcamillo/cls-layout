@@ -6,29 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CS Layout</title>
     <link rel="stylesheet" href="./src/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header class="header">
       <nav class="navigation">
         <ul class="menu">
           <li class="menu__item dropdown">
-            <button
-              class="menu__button"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+            <button class="menu__button" aria-haspopup="true" aria-expanded="false">
               Products
               <i class="fa-solid fa-chevron-down fa-2xs"></i>
             </button>
@@ -54,34 +41,19 @@
             <a href="#" class="menu__link">Contact</a>
           </li>
         </ul>
-        <img
-          class="logo"
-          src="./public/img/header-logo1x.png "
-          alt="cloudsuite logo"
-        />
+        <img class="logo" src="./public/img/header-logo1x.png " alt="cloudsuite logo" />
         <ul class="user">
           <li class="user__item">
             <form class="search">
               <i class="search__icon fa-solid fa-magnifying-glass"></i>
-              <input
-                class="search__input"
-                id="search-input"
-                type="text"
-                placeholder="What are you looking for?"
-              />
+              <input class="search__input" id="search-input" type="text" placeholder="What are you looking for?" />
             </form>
           </li>
           <li class="user__item">
-            <a href="#" class="login" aria-label="Login to your account">
-              <i class="fa-solid fa-user"></i> My account
-            </a>
+            <a href="#" class="login" aria-label="Login to your account"> <i class="fa-solid fa-user"></i> My account </a>
           </li>
           <li class="user__item">
-            <a
-              href="#"
-              class="basket"
-              aria-label="Your shopping basket with o items"
-            >
+            <a href="#" class="basket" aria-label="Your shopping basket with o items">
               <p class="basket__amount">0</p>
               <i class="fa-solid fa-basket-shopping fa-lg"></i>
             </a>
@@ -96,12 +68,10 @@
           <p class="highlight__text" data-rate="-2">Bring the most</p>
           <p class="highlight__text" data-rate="-2">beautiful colors into</p>
           <p class="highlight__text" data-rate="-2">your home</p>
-          <button class="highlight__button" data-rate="-2">
-            Discover our indoor paint
-          </button>
+          <button class="highlight__button" data-rate="-2">Discover our indoor paint</button>
         </div>
       </section>
-      <section class="content"></section>
+      <div class="content" data-rate="-10"></div>
     </main>
     <script src="./src/app.js"></script>
   </body>
