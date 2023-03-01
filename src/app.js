@@ -35,7 +35,7 @@ function toggleDropdownState(element) {
   const trigger = element.target;
   const menu = trigger.parentNode.querySelector('.menu__itemDropdown');
 
-  let isOpen = trigger.getAttribute("aria-expanded");
+  let isOpen = trigger.getAttribute('aria-expanded');
   let iconDropDown = trigger.querySelector('.fa-solid');
 
   if (isOpen === 'true') {
