@@ -14,7 +14,7 @@ dropdownsList.forEach((container) => {
 });
 
 function paintedHeader() {
-  if (document.documentElement.scrollTop == 0) {
+  if (document.documentElement.scrollTop === 0) {
     header.classList.remove('bg-painted');
     toggleTriggersClass('remove');
   } else {
