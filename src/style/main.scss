@@ -19,6 +19,15 @@ body {
 
   &.bg-painted {
     background-color: $white;
+
+    .menu__button{
+      color: $white;
+      background-color: $yellow;
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
   }
 }
 
@@ -38,14 +47,19 @@ body {
       @include flex(row, center, center);
       gap: 0.3rem;
 
-      &.bg-painted {
-        color: $white;
-        background-color: $yellow;
-      }
-
       &:hover,
       &:focus {
-        background-color: $hover-yellow;
+        color: $hover-yellow;
+      }
+
+      &[aria-expanded="false"] + .menu__itemDropdown {
+       visibility: hidden;
+       opacity: 0;
+      }
+    
+      &[aria-expanded="true"] + .menu__itemDropdown {
+        visibility: visible;
+        opacity: 1;
       }
     }
 
@@ -72,11 +86,11 @@ body {
         left: 0rem;
         width: 24rem;
         padding: 1.8rem;
-        opacity: 0;
-        visibility: hidden;
         transition: opacity 200ms ease-in-out;
         box-shadow: 0rem 0.6rem 0.3rem rgba(0, 0, 0, 0.15);
         cursor: pointer;
+
+        
 
         li {
           transition: background-color 200ms ease-in-out;
@@ -94,6 +108,7 @@ body {
   }
 
   .logo {
+    padding: 0.5rem;
     flex-grow: 1;
   }
 
@@ -128,24 +143,34 @@ body {
     .basket {
       color: $graffiti;
     }
+
+    .basket {
+      position: relative;
+      &__amount {
+        @include font(0.7rem, 400, unset, $white);
+        @include flex(row, center, center);
+        position: absolute;
+        width: 1.2rem;
+        height: 1.2rem;
+        left: 0.7rem;
+        bottom: 1.3rem;
+        border-radius: 0.3rem;
+        background-color: $orange;
+      }
+    }
   }
 }
 
 .hero {
   @include flex(column, center, flex-startr);
-  background: linear-gradient(
-      0deg,
-      rgba(131, 182, 210, 0.9),
-      rgba(131, 182, 210, 0.9)
-    ),
-    url('/public/img/painting.png');
-  height: 100vh;
-  padding: 6.2rem 0rem 0rem 6.2rem;
-  gap: 1rem;
+  background: linear-gradient(0deg, rgba(131, 182, 210, 0.9), rgba(131, 182, 210, 0.9)), url('/public/img/painting.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
+  padding: 6.2rem 0rem 0rem 6.2rem;
+  gap: 1rem;
 }
 
 .highlight {

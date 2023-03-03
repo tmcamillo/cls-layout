@@ -62,6 +62,13 @@ body {
 .header.bg-painted {
   background-color: #ffffff;
 }
+.header.bg-painted .menu__button {
+  color: #ffffff;
+  background-color: #f6d524;
+}
+.header.bg-painted .menu__button:hover, .header.bg-painted .menu__button:focus {
+  color: #ffffff;
+}
 
 .navigation {
   display: flex;
@@ -96,12 +103,16 @@ body {
   flex-direction: row;
   gap: 0.3rem;
 }
-.navigation .menu__button.bg-painted {
-  color: #ffffff;
-  background-color: #f6d524;
-}
 .navigation .menu__button:hover, .navigation .menu__button:focus {
-  background-color: #e1c323;
+  color: #e1c323;
+}
+.navigation .menu__button[aria-expanded=false] + .menu__itemDropdown {
+  visibility: hidden;
+  opacity: 0;
+}
+.navigation .menu__button[aria-expanded=true] + .menu__itemDropdown {
+  visibility: visible;
+  opacity: 1;
 }
 .navigation .menu__link {
   font-family: "Roboto", sans-serif;
@@ -136,8 +147,6 @@ body {
   left: 0rem;
   width: 24rem;
   padding: 1.8rem;
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 200ms ease-in-out;
   box-shadow: 0rem 0.6rem 0.3rem rgba(0, 0, 0, 0.15);
   cursor: pointer;
@@ -153,6 +162,7 @@ body {
   text-decoration: underline;
 }
 .navigation .logo {
+  padding: 0.5rem;
   flex-grow: 1;
 }
 .navigation .user {
@@ -184,6 +194,27 @@ body {
 .navigation .user .basket {
   color: #4b4b4b;
 }
+.navigation .user .basket {
+  position: relative;
+}
+.navigation .user .basket__amount {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: unset;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  left: 0.7rem;
+  bottom: 1.3rem;
+  border-radius: 0.3rem;
+  background-color: #e56041;
+}
 
 .hero {
   display: flex;
@@ -191,13 +222,13 @@ body {
   justify-content: center;
   flex-direction: column;
   background: linear-gradient(0deg, rgba(131, 182, 210, 0.9), rgba(131, 182, 210, 0.9)), url("/public/img/painting.png");
-  height: 100vh;
-  padding: 6.2rem 0rem 0rem 6.2rem;
-  gap: 1rem;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
+  padding: 6.2rem 0rem 0rem 6.2rem;
+  gap: 1rem;
 }
 
 .highlight {
