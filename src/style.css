@@ -62,6 +62,13 @@ body {
 .header.bg-painted {
   background-color: #ffffff;
 }
+.header.bg-painted .menu__button {
+  color: #ffffff;
+  background-color: #f6d524;
+}
+.header.bg-painted .menu__button:hover, .header.bg-painted .menu__button:focus {
+  color: #ffffff;
+}
 
 .navigation {
   display: flex;
@@ -96,15 +103,16 @@ body {
   flex-direction: row;
   gap: 0.3rem;
 }
-.navigation .menu__button.bg-painted {
-  color: #ffffff;
-  background-color: #f6d524;
-}
-.navigation .menu__button.bg-painted:hover, .navigation .menu__button.bg-painted:focus {
-  color: white;
-}
 .navigation .menu__button:hover, .navigation .menu__button:focus {
   color: #e1c323;
+}
+.navigation .menu__button[aria-expanded=false] + .menu__itemDropdown {
+  visibility: hidden;
+  opacity: 0;
+}
+.navigation .menu__button[aria-expanded=true] + .menu__itemDropdown {
+  visibility: visible;
+  opacity: 1;
 }
 .navigation .menu__link {
   font-family: "Roboto", sans-serif;
@@ -139,8 +147,6 @@ body {
   left: 0rem;
   width: 24rem;
   padding: 1.8rem;
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 200ms ease-in-out;
   box-shadow: 0rem 0.6rem 0.3rem rgba(0, 0, 0, 0.15);
   cursor: pointer;
@@ -156,6 +162,7 @@ body {
   text-decoration: underline;
 }
 .navigation .logo {
+  padding: 0.5rem;
   flex-grow: 1;
 }
 .navigation .user {

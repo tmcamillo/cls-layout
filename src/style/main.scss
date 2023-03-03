@@ -19,6 +19,15 @@ body {
 
   &.bg-painted {
     background-color: $white;
+
+    .menu__button{
+      color: $white;
+      background-color: $yellow;
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
   }
 }
 
@@ -38,18 +47,19 @@ body {
       @include flex(row, center, center);
       gap: 0.3rem;
 
-      &.bg-painted {
-        color: $white;
-        background-color: $yellow;
-          &:hover,
-          &:focus {
-          color: white;
-        }
-      }
-
       &:hover,
       &:focus {
         color: $hover-yellow;
+      }
+
+      &[aria-expanded="false"] + .menu__itemDropdown {
+       visibility: hidden;
+       opacity: 0;
+      }
+    
+      &[aria-expanded="true"] + .menu__itemDropdown {
+        visibility: visible;
+        opacity: 1;
       }
     }
 
@@ -76,11 +86,11 @@ body {
         left: 0rem;
         width: 24rem;
         padding: 1.8rem;
-        opacity: 0;
-        visibility: hidden;
         transition: opacity 200ms ease-in-out;
         box-shadow: 0rem 0.6rem 0.3rem rgba(0, 0, 0, 0.15);
         cursor: pointer;
+
+        
 
         li {
           transition: background-color 200ms ease-in-out;
@@ -98,6 +108,7 @@ body {
   }
 
   .logo {
+    padding: 0.5rem;
     flex-grow: 1;
   }
 
